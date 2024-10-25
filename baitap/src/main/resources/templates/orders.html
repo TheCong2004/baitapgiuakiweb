@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danh sách Đơn Hàng</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    table, th, td {
+      border: 1px solid black;
+      padding: 8px;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    th, td {
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+<h1>Danh sách Đơn Hàng</h1>
+<table>
+  <thead>
+  <tr>
+    <th>Mã Đơn Hàng</th>
+    <th>Người Dùng</th>
+    <th>Tổng Số Tiền</th>
+    <th>Trạng Thái</th>
+    <th>Địa Chỉ Giao Hàng</th>
+    <th>Thành Phố</th>
+    <th>Quốc Gia</th>
+    <th>Mã Bưu Điện</th>
+    <th>Phương Thức Thanh Toán</th>
+    <th>Thời Gian Tạo</th>
+    <th>Thời Gian Cập Nhật</th>
+  </tr>
+  </thead>
+  <tbody>
+  <!-- Sử dụng Thymeleaf để lặp qua danh sách đơn hàng -->
+  <tr th:each="order : ${orders}">
+    <td th:text="${order.orderId}"></td>
+    <td th:text="${order.userId}"></td>
+    <td th:text="${order.totalAmount}"></td>
+    <td th:text="${order.orderStatus}"></td>
+    <td th:text="${order.shippingAddress}"></td>
+    <td th:text="${order.shippingCity}"></td>
+    <td th:text="${order.shippingCountry}"></td>
+    <td th:text="${order.shippingPostalCode}"></td>
+    <td th:text="${order.paymentMethod}"></td>
+    <td th:text="${order.createdAt}"></td>
+    <td th:text="${order.updatedAt}"></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

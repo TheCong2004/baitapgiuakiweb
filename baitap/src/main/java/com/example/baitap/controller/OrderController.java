@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/orders")
+@RequestMapping("/api/orders")
 public class OrderController {
     @Autowired
     private OrderService orderService;
@@ -34,8 +34,7 @@ public class OrderController {
         orderService.deleteOrder(id);
     }
 
-    @GetMapping("/orders")
-    public String getOrders() {
-        return "orders"; // Trả về tên view để hiển thị
-    }
+
+
+
 }
